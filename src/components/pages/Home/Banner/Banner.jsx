@@ -15,14 +15,14 @@ const Banner = () => {
         spaceBetween={30}
         centeredSlides={true}
         autoplay={{
-          // delay: 2500,
+          delay: 2500,
           disableOnInteraction: false,
         }}
         pagination={{
           clickable: true,
         }}
         navigation={true}
-        modules={[Pagination, Navigation]}
+        modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper"
       >
         <SwiperSlide>
@@ -30,42 +30,48 @@ const Banner = () => {
             <figure>
               <img src={banner1} alt="" />
             </figure>
-            <div className="bg-slate-700 absolute   mr-4 top-0 mt-4 px-4 text-white">
-              <h1>Gorgeous</h1>
-              <h3>Exclusive offer 25% off this week</h3>
+            <div className=" absolute lg:block hidden md:hidden  ml-[650px] mb-[210px] p-10  bottom-0   text-white">
+              <h1 className="text-2xl font-bold">Gorgeous</h1>
+              <h3 className="text-xl text-orange-500">
+                Exclusive offer 25% off this week
+              </h3>
               <p>
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. <br />
                 Qui illo nesciunt maxime exercitationem <br /> vitae nihil
                 repudiandae animi praesentium alias pariatur.
               </p>
-              <h4>$350</h4>
+              <h4 className="text-2xl font-bold">$350</h4>
             </div>
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <img src={banner2} alt="" />
-          <div className="">
-            <h1>Gorgeous</h1>
-            <h3>Exclusive offer 25% off this week</h3>
+          <div className=" absolute lg:block hidden md:hidden ml-[250px] mb-[210px] p-10  bottom-0   text-white">
+            <h1 className="text-2xl font-bold">Rolex</h1>
+            <h3 className="text-xl text-orange-500">
+              Exclusive offer 25% off this week
+            </h3>
             <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui illo
-              nesciunt maxime exercitationem vitae nihil repudiandae animi
-              praesentium alias pariatur.
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. <br />{" "}
+              Qui illo nesciunt maxime exercitationem <br /> vitae nihil
+              repudiandae animi praesentium alias pariatur.
             </p>
-            <h4>$350</h4>
+            <h4 className="text-2xl font-bold">$450</h4>
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <img src={banner3} alt="" />
-          <div className="">
-            <h1>Gorgeous</h1>
-            <h3>Exclusive offer 25% off this week</h3>
+          <div className=" absolute lg:block hidden md:hidden  ml-[250px] mb-[210px] p-10  bottom-0   text-white">
+            <h1 className="text-2xl font-bold">Luxury</h1>
+            <h3 className="text-xl text-orange-500">
+              Exclusive offer 25% off this week
+            </h3>
             <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui illo
-              nesciunt maxime exercitationem vitae nihil repudiandae animi
-              praesentium alias pariatur.
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. <br />
+              Qui illo nesciunt maxime exercitationem <br /> vitae nihil
+              repudiandae animi praesentium alias pariatur.
             </p>
-            <h4>$350</h4>
+            <h4 className="text-2xl font-bold">$250</h4>
           </div>
         </SwiperSlide>
       </Swiper>

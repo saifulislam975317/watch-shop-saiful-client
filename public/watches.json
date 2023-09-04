@@ -1,0 +1,194 @@
+[
+  {
+    "id": 1,
+    "name": "Casio G-Shock Black",
+    "image": "https://i.ibb.co/R70tqVm/w1.webp",
+    "category": "casio",
+    "details": "Durable and stylish G-Shock watch for outdoor enthusiasts.",
+    "price": 99.99
+  },
+  {
+    "id": 2,
+    "name": "Casio Edifice Silver",
+    "image": "https://i.ibb.co/MgSGR4v/w2.webp",
+    "category": "casio",
+    "details": "Elegant silver-tone Edifice watch with advanced features.",
+    "price": 129.99
+  },
+  {
+    "id": 3,
+    "name": "Casio Pro Trek Outdoor",
+    "image": "https://i.ibb.co/QH6TQT8/w3.webp",
+    "category": "casio",
+    "details": "Outdoor adventure watch with built-in compass and altimeter.",
+    "price": 149.99
+  },
+  {
+    "id": 4,
+    "name": "Casio Vintage Digital",
+    "image": "https://i.ibb.co/6PtxcmF/w4.webp",
+    "category": "casio",
+    "details": "Retro-style digital watch with a nostalgic look.",
+    "price": 79.99
+  },
+  {
+    "id": 5,
+    "name": "Casio Baby-G Pink",
+    "image": "https://i.ibb.co/hHj1nkw/w5.webp",
+    "category": "casio",
+    "details": "Pink Baby-G watch with a sporty and fun design.",
+    "price": 69.99
+  },
+  {
+    "id": 6,
+    "name": "Casio Illuminator Gold",
+    "image": "https://i.ibb.co/0Qz2zfV/w6.webp",
+    "category": "casio",
+    "details": "Gold-tone Illuminator watch with a sleek and modern look.",
+    "price": 109.99
+  },
+  {
+    "id": 7,
+    "name": "Classic Black Leather",
+    "image": "https://i.ibb.co/qJyCRGg/w1.webp",
+    "category": "classic",
+    "details": "Timeless black leather strap watch with a classic design.",
+    "price": 159.99
+  },
+  {
+    "id": 8,
+    "name": "Vintage Silver Dial",
+    "image": "https://i.ibb.co/17VF7bC/w2.webp",
+    "category": "classic",
+    "details": "Vintage-style watch with a silver dial and leather band.",
+    "price": 179.99
+  },
+  {
+    "id": 9,
+    "name": "Roman Numeral Gold",
+    "image": "https://i.ibb.co/QH6TQT8/w3.webp",
+    "category": "classic",
+    "details": "Elegant gold-tone watch with Roman numeral markers.",
+    "price": 199.99
+  },
+  {
+    "id": 10,
+    "name": "Simple Stainless Steel",
+    "image": "https://i.ibb.co/0Qz2zfV/w6.webp",
+    "category": "classic",
+    "details": "Clean and minimalist stainless steel watch for everyday wear.",
+    "price": 129.99
+  },
+  {
+    "id": 11,
+    "name": "Two-Tone Bracelet",
+    "image": "https://i.ibb.co/DgYnqrb/w5.webp",
+    "category": "classic",
+    "details": "Stylish two-tone bracelet watch with a timeless look.",
+    "price": 149.99
+  },
+  {
+    "id": 12,
+    "name": "Leather Band Quartz",
+    "image": "https://i.ibb.co/H4cx2hL/w6.webp",
+    "category": "classic",
+    "details": "Quartz watch with a leather band and traditional styling.",
+    "price": 119.99
+  },
+  {
+    "id": 13,
+    "name": "Modern Silver Mesh",
+    "image": "https://i.ibb.co/hCk6mLx/w1.webp",
+    "category": "modern",
+    "details": "Contemporary silver-tone mesh watch with a sleek design.",
+    "price": 169.99
+  },
+  {
+    "id": 14,
+    "name": "Minimalist Black Dial",
+    "image": "https://i.ibb.co/R70tqVm/w1.webp",
+    "category": "modern",
+    "details": "Minimalist watch with a black dial and leather strap.",
+    "price": 139.99
+  },
+  {
+    "id": 15,
+    "name": "Stainless Steel Chronograph",
+    "image": "https://i.ibb.co/QH6TQT8/w3.webp",
+    "category": "modern",
+    "details": "Stainless steel chronograph watch for a modern lifestyle.",
+    "price": 189.99
+  },
+  {
+    "id": 16,
+    "name": "Rose Gold Elegance",
+    "image": "https://i.ibb.co/0Qz2zfV/w6.webp",
+    "category": "modern",
+    "details": "Elegant rose gold-tone watch with a minimalist style.",
+    "price": 149.99
+  },
+  {
+    "id": 17,
+    "name": "Blue Dial Contemporary",
+    "image": "https://i.ibb.co/LJ16R9N/w5.webp",
+    "category": "modern",
+    "details": "Contemporary watch with a blue dial and stainless steel case.",
+    "price": 159.99
+  },
+  {
+    "id": 18,
+    "name": "Sleek Ceramic White",
+    "image": "https://i.ibb.co/VY77zYZ/w6.webp",
+    "category": "modern",
+    "details": "Sleek white ceramic watch with a modern look.",
+    "price": 199.99
+  },
+  {
+    "id": 19,
+    "name": "Sports Chronograph Black",
+    "image": "https://i.ibb.co/6PtxcmF/w4.webp",
+    "category": "sports",
+    "details": "Chronograph sports watch designed for active lifestyles.",
+    "price": 129.99
+  },
+  {
+    "id": 20,
+    "name": "Digital Fitness Tracker",
+    "image": "https://i.ibb.co/s9gxrHm/w7.webp",
+    "category": "sports",
+    "details": "Digital fitness tracker watch with heart rate monitoring.",
+    "price": 99.99
+  },
+  {
+    "id": 21,
+    "name": "Waterproof Diver's Watch",
+    "image": "https://i.ibb.co/s9gxrHm/w7.webp",
+    "category": "sports",
+    "details": "Waterproof diver's watch for underwater adventures.",
+    "price": 149.99
+  },
+  {
+    "id": 22,
+    "name": "Outdoor Adventure Watch",
+    "image": "https://i.ibb.co/0Qz2zfV/w6.webp",
+    "category": "sports",
+    "details": "Rugged outdoor adventure watch with compass and altimeter.",
+    "price": 179.99
+  },
+  {
+    "id": 23,
+    "name": "Smart Sports Watch",
+    "image": "https://i.ibb.co/QH6TQT8/w3.webp",
+    "category": "sports",
+    "details": "Smartwatch designed for sports and fitness tracking.",
+    "price": 199.99
+  },
+  {
+    "id": 24,
+    "name": "Digital Running Watch",
+    "image": "https://i.ibb.co/hCk6mLx/w1.webp",
+    "category": "sports",
+    "details": "Digital running watch with GPS tracking and heart rate sensor.",
+    "price": 119.99
+  }
+]
