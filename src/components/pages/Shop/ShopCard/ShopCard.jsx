@@ -1,3 +1,5 @@
+import { FaCartPlus } from "react-icons/fa";
+
 const ShopCard = ({ item }) => {
   const { name, image, price, details } = item;
   return (
@@ -14,8 +16,10 @@ const ShopCard = ({ item }) => {
           <h2 className="card-title">{name}</h2>
           <p>{details}</p>
           <h3 className="text-orange-500 font-bold ">Price ${price}</h3>
-          <div className="card-actions">
-            <button className="btn btn-info">Add To Cart</button>
+          <div className="card-actions text-white">
+            <button className="btn btn-info">
+              Add To Cart <FaCartPlus className="text-2xl"></FaCartPlus>
+            </button>
           </div>
         </div>
       </div>
