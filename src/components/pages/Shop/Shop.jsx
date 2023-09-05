@@ -15,7 +15,7 @@ const Shop = () => {
   return (
     <div className="mt-8">
       <h1 className="text-center text-3xl font-bold mb-8">
-        Order Products by Categories
+        Order Watches by Categories
       </h1>
       <Tabs
         className="text-center"

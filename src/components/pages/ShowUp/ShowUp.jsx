@@ -3,7 +3,7 @@ const ShowUp = () => {
   return (
     <div className="mt-8">
       <h1 className="text-center font-bold text-2xl mb-8">
-        We offer on products. Don't Miss
+        We offer on various Watches. <br /> Don't Miss
       </h1>
       <div
         className="hero h-[500px]  bg-fixed "

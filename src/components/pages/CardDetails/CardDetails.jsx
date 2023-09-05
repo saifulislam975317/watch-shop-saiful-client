@@ -4,7 +4,7 @@ import coupleW from "../../../assets/mwc watches/couple watch.jpg";
 
 const CardDetails = () => {
   return (
-    <div className="grid lg:grid-cols-3 md:grid-cols-2 justify-between my-4 gap-2">
+    <div className="grid lg:grid-cols-3 md:grid-cols-2 justify-between my-4 gap-2 ">
       <div className="card  shadow-xl  image-full">
         <figure>
           <img src={menW} alt="watch" />
