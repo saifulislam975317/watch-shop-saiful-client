@@ -1,6 +1,5 @@
 [
   {
-    "id": 1,
     "name": "Casio G-Shock Black",
     "image": "https://i.ibb.co/R70tqVm/w1.webp",
     "category": "casio",
@@ -8,7 +7,6 @@
     "price": 99.99
   },
   {
-    "id": 2,
     "name": "Casio Edifice Silver",
     "image": "https://i.ibb.co/MgSGR4v/w2.webp",
     "category": "casio",
@@ -16,7 +14,6 @@
     "price": 129.99
   },
   {
-    "id": 3,
     "name": "Casio Pro Trek Outdoor",
     "image": "https://i.ibb.co/QH6TQT8/w3.webp",
     "category": "casio",
@@ -24,7 +21,6 @@
     "price": 149.99
   },
   {
-    "id": 4,
     "name": "Casio Vintage Digital",
     "image": "https://i.ibb.co/6PtxcmF/w4.webp",
     "category": "casio",
@@ -32,7 +28,6 @@
     "price": 79.99
   },
   {
-    "id": 5,
     "name": "Casio Baby-G Pink",
     "image": "https://i.ibb.co/hHj1nkw/w5.webp",
     "category": "casio",
@@ -40,7 +35,6 @@
     "price": 69.99
   },
   {
-    "id": 6,
     "name": "Casio Illuminator Gold",
     "image": "https://i.ibb.co/0Qz2zfV/w6.webp",
     "category": "casio",
@@ -48,7 +42,6 @@
     "price": 109.99
   },
   {
-    "id": 7,
     "name": "Classic Black Leather",
     "image": "https://i.ibb.co/qJyCRGg/w1.webp",
     "category": "classic",
@@ -56,7 +49,6 @@
     "price": 159.99
   },
   {
-    "id": 8,
     "name": "Vintage Silver Dial",
     "image": "https://i.ibb.co/17VF7bC/w2.webp",
     "category": "classic",
@@ -64,7 +56,6 @@
     "price": 179.99
   },
   {
-    "id": 9,
     "name": "Roman Numeral Gold",
     "image": "https://i.ibb.co/QH6TQT8/w3.webp",
     "category": "classic",
@@ -72,7 +63,6 @@
     "price": 199.99
   },
   {
-    "id": 10,
     "name": "Simple Stainless Steel",
     "image": "https://i.ibb.co/0Qz2zfV/w6.webp",
     "category": "classic",
@@ -80,7 +70,6 @@
     "price": 129.99
   },
   {
-    "id": 11,
     "name": "Two-Tone Bracelet",
     "image": "https://i.ibb.co/DgYnqrb/w5.webp",
     "category": "classic",
@@ -88,7 +77,6 @@
     "price": 149.99
   },
   {
-    "id": 12,
     "name": "Leather Band Quartz",
     "image": "https://i.ibb.co/H4cx2hL/w6.webp",
     "category": "classic",
@@ -96,7 +84,6 @@
     "price": 119.99
   },
   {
-    "id": 13,
     "name": "Modern Silver Mesh",
     "image": "https://i.ibb.co/hCk6mLx/w1.webp",
     "category": "modern",
@@ -104,7 +91,6 @@
     "price": 169.99
   },
   {
-    "id": 14,
     "name": "Minimalist Black Dial",
     "image": "https://i.ibb.co/R70tqVm/w1.webp",
     "category": "modern",
@@ -112,7 +98,6 @@
     "price": 139.99
   },
   {
-    "id": 15,
     "name": "Stainless Steel Chronograph",
     "image": "https://i.ibb.co/QH6TQT8/w3.webp",
     "category": "modern",
@@ -120,7 +105,6 @@
     "price": 189.99
   },
   {
-    "id": 16,
     "name": "Rose Gold Elegance",
     "image": "https://i.ibb.co/0Qz2zfV/w6.webp",
     "category": "modern",
@@ -128,7 +112,6 @@
     "price": 149.99
   },
   {
-    "id": 17,
     "name": "Blue Dial Contemporary",
     "image": "https://i.ibb.co/LJ16R9N/w5.webp",
     "category": "modern",
@@ -136,7 +119,6 @@
     "price": 159.99
   },
   {
-    "id": 18,
     "name": "Sleek Ceramic White",
     "image": "https://i.ibb.co/VY77zYZ/w6.webp",
     "category": "modern",
@@ -144,7 +126,6 @@
     "price": 199.99
   },
   {
-    "id": 19,
     "name": "Sports Chronograph Black",
     "image": "https://i.ibb.co/6PtxcmF/w4.webp",
     "category": "sports",
@@ -152,7 +133,6 @@
     "price": 129.99
   },
   {
-    "id": 20,
     "name": "Digital Fitness Tracker",
     "image": "https://i.ibb.co/s9gxrHm/w7.webp",
     "category": "sports",
@@ -160,7 +140,6 @@
     "price": 99.99
   },
   {
-    "id": 21,
     "name": "Waterproof Diver's Watch",
     "image": "https://i.ibb.co/s9gxrHm/w7.webp",
     "category": "sports",
@@ -168,7 +147,6 @@
     "price": 149.99
   },
   {
-    "id": 22,
     "name": "Outdoor Adventure Watch",
     "image": "https://i.ibb.co/0Qz2zfV/w6.webp",
     "category": "sports",
@@ -176,7 +154,6 @@
     "price": 179.99
   },
   {
-    "id": 23,
     "name": "Smart Sports Watch",
     "image": "https://i.ibb.co/QH6TQT8/w3.webp",
     "category": "sports",
@@ -184,7 +161,6 @@
     "price": 199.99
   },
   {
-    "id": 24,
     "name": "Digital Running Watch",
     "image": "https://i.ibb.co/hCk6mLx/w1.webp",
     "category": "sports",

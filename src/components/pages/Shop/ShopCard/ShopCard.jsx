@@ -1,7 +1,38 @@
 import { FaCartPlus } from "react-icons/fa";
+import Swal from "sweetalert2";
 
 const ShopCard = ({ item }) => {
   const { name, image, price, details } = item;
+
+  const handleAddToCart = (item) => {
+    const { _id, name, image, price, details } = item;
+    const newItem = {
+      name,
+      image,
+      price,
+      details,
+      productId: _id,
+    };
+    fetch("http://localhost:5000/carts", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(newItem),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.insertedId) {
+          Swal.fire({
+            position: "top-center",
+            icon: "success",
+            title: `${item.name} is add to cart successfully`,
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
+      });
+  };
   return (
     <div>
       <div className="card w-96  bg-base-100 shadow-xl">
@@ -17,7 +48,10 @@ const ShopCard = ({ item }) => {
           <p>{details}</p>
           <h3 className="text-orange-500 font-bold ">Price ${price}</h3>
           <div className="card-actions text-white">
-            <button className="btn btn-info">
+            <button
+              onClick={() => handleAddToCart(item)}
+              className="btn btn-info"
+            >
               Add To Cart <FaCartPlus className="text-2xl"></FaCartPlus>
             </button>
           </div>
