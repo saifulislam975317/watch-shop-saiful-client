@@ -1,6 +1,9 @@
+import Blog from "../../Blog/Blog";
 import CardDetails from "../../CardDetails/CardDetails";
+import Conditions from "../../Conditions/Conditions";
 import Shop from "../../Shop/Shop";
 import ShowUp from "../../ShowUp/ShowUp";
+import Testimonials from "../../Testimonials/Testimonials";
 import Banner from "../Banner/Banner";
 
 const Home = () => {
@@ -10,6 +13,9 @@ const Home = () => {
       <CardDetails></CardDetails>
       <Shop></Shop>
       <ShowUp></ShowUp>
+      <Conditions></Conditions>
+      <Testimonials></Testimonials>
+      <Blog></Blog>
     </div>
   );
 };

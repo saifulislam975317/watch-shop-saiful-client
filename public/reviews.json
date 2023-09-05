@@ -1,0 +1,32 @@
+[
+  {
+    "name": "John Doe",
+    "ratings": 3,
+    "review": "I am thrilled with my recent purchase from this store. The selection of watches is outstanding, and the quality is top-notch. The ordering process was smooth, and the watch arrived on time. I will definitely be a repeat customer!"
+  },
+  {
+    "name": "Sarah Smith",
+    "ratings": 4,
+    "review": "Great store! The website is user-friendly, and I found the perfect watch for my husband's birthday. The only reason I'm not giving it 5 stars is because the delivery took a bit longer than expected. But overall, a positive experience."
+  },
+  {
+    "name": "David Johnson",
+    "ratings": 5,
+    "review": "I can't say enough good things about this online watch store. The customer service is excellent, and the prices are competitive. I received my order within a few days, and the watch exceeded my expectations. Highly recommended!"
+  },
+  {
+    "name": "Emily Wilson",
+    "ratings": 3,
+    "review": "The watch I ordered was beautiful, but it had a minor scratch on the case when it arrived. Customer service was quick to respond and offered a replacement, but I didn't want the hassle of returning it. So, I decided to keep it. Otherwise, the store has a nice collection."
+  },
+  {
+    "name": "Michael Brown",
+    "ratings": 3,
+    "review": "I've purchased multiple watches from this store, and I've never been disappointed. The quality, variety, and pricing are excellent. The watches always arrive in perfect condition and on time. This is my go-to place for buying watches online."
+  },
+  {
+    "name": "Jessica Parker",
+    "ratings": 4,
+    "review": "I found a unique vintage-style watch on this website that I couldn't find anywhere else. The watch is gorgeous, and I'm getting compliments on it all the time. However, the checkout process could be a bit smoother. But I'm happy with my purchase!"
+  }
+]

@@ -13,8 +13,15 @@ const Shop = () => {
   const modern = products.filter((product) => product.category === "modern");
   const sports = products.filter((product) => product.category === "sports");
   return (
-    <div>
-      <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
+    <div className="mt-8">
+      <h1 className="text-center text-3xl font-bold mb-8">
+        Order Products by Categories
+      </h1>
+      <Tabs
+        className="text-center"
+        selectedIndex={tabIndex}
+        onSelect={(index) => setTabIndex(index)}
+      >
         <TabList>
           <Tab>Casio</Tab>
           <Tab>Classic</Tab>
