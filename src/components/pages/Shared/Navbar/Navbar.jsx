@@ -1,9 +1,13 @@
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../../../../ContextProvider/AuthProvider";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 
 const Navbar = () => {
-  const { user } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
+  const handleLogout = () => {
+    logOut().then(() => {});
+  };
   const navOption = (
     <>
       <li>
@@ -13,9 +17,20 @@ const Navbar = () => {
         <NavLink to="/about">About us</NavLink>
       </li>
       {user ? (
-        <li>
-          <NavLink to="/login">Logout</NavLink>
-        </li>
+        <>
+          <li>
+            <NavLink to="dashboard/myCart">
+              <AiOutlineShoppingCart className="text-xl"></AiOutlineShoppingCart>
+              <span className="badge badge-secondary">+0</span>
+            </NavLink>
+          </li>
+          <li onClick={handleLogout}>
+            <NavLink to="/login">Logout</NavLink>
+          </li>
+          <li>
+            <a href="">{user?.displayName}</a>
+          </li>
+        </>
       ) : (
         <>
           <li>

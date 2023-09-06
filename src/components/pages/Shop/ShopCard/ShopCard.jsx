@@ -1,13 +1,17 @@
+import { useContext } from "react";
 import { FaCartPlus } from "react-icons/fa";
 import Swal from "sweetalert2";
+import { AuthContext } from "../../../../ContextProvider/AuthProvider";
 
 const ShopCard = ({ item }) => {
   const { name, image, price, details } = item;
+  const { user } = useContext(AuthContext);
 
   const handleAddToCart = (item) => {
     const { _id, name, image, price, details } = item;
     const newItem = {
       name,
+      email: user?.email,
       image,
       price,
       details,
