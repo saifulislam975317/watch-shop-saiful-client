@@ -8,8 +8,20 @@ const SocialLogin = () => {
   const handleGoogle = () => {
     googleLogin().then((result) => {
       const user = result.user;
-      navigate("/");
-      console.log(user);
+      const saveUser = { name: user.displayName, email: user.email };
+      fetch("http://localhost:5000/allUsers", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(saveUser),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.insertedId || !data.insertedId) {
+            navigate("/");
+          }
+        });
     });
   };
   return (

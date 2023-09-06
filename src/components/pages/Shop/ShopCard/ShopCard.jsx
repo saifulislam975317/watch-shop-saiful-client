@@ -2,10 +2,12 @@ import { useContext } from "react";
 import { FaCartPlus } from "react-icons/fa";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../../../ContextProvider/AuthProvider";
+import useCarts from "../../../../hooks/useCarts";
 
 const ShopCard = ({ item }) => {
   const { name, image, price, details } = item;
   const { user } = useContext(AuthContext);
+  const [, refetch] = useCarts();
 
   const handleAddToCart = (item) => {
     const { _id, name, image, price, details } = item;
@@ -27,6 +29,7 @@ const ShopCard = ({ item }) => {
       .then((res) => res.json())
       .then((data) => {
         if (data.insertedId) {
+          refetch();
           Swal.fire({
             position: "top-center",
             icon: "success",
