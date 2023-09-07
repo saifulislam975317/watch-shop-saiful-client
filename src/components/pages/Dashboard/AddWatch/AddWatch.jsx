@@ -1,5 +1,7 @@
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
+import SectionTitle from "../../Shared/SectionTitle/SectionTitle";
+import { Helmet } from "react-helmet-async";
 const imageBB_api = import.meta.env.VITE_imageBB_api;
 const AddWatch = () => {
   const {
@@ -54,7 +56,10 @@ const AddWatch = () => {
   };
   return (
     <div className="w-full px-12">
-      <h1 className="text-center text-3xl font-bold">Add a Watch</h1>
+      <Helmet>
+        <title>Mobile shop | Add Watch</title>
+      </Helmet>
+      <SectionTitle heading={"Add a Watch"}></SectionTitle>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="form-control w-full ">
           <label className="label">

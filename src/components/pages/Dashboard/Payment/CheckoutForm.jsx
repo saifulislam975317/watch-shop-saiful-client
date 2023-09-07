@@ -3,6 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../../../ContextProvider/AuthProvider";
 import "./css/CheckoutFormCss.css";
+import SectionTitle from "../../Shared/SectionTitle/SectionTitle";
 
 const CheckoutForm = ({ refetch, carts, price }) => {
   const { user } = useContext(AuthContext);
@@ -103,7 +104,8 @@ const CheckoutForm = ({ refetch, carts, price }) => {
     }
   };
   return (
-    <>
+    <div>
+      <SectionTitle heading={"Please Pay"}></SectionTitle>
       <form className="w-2/4 p-8" onSubmit={handleSubmit}>
         <CardElement
           options={{
@@ -133,7 +135,7 @@ const CheckoutForm = ({ refetch, carts, price }) => {
       {transactionId && (
         <p className="text-green-600 ml-8 -mt-4">Your TnxId: {transactionId}</p>
       )}
-    </>
+    </div>
   );
 };
 

@@ -79,8 +79,8 @@ const ShopCard = ({ item }) => {
               onClick={() => handleAddToCart(item)}
               className="btn btn-success "
             >
+              <FaCartPlus className="text-2xl "></FaCartPlus>
               Add To Cart
-              <FaCartPlus className="text-2xl text-white"></FaCartPlus>
             </button>
           </div>
         </div>

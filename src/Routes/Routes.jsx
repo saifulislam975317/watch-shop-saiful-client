@@ -14,6 +14,8 @@ import PageNotFound from "../PageNotFound/PageNotFound";
 import AboutUs from "../components/pages/AboutUs/AboutUs";
 import Payment from "../components/pages/Dashboard/Payment/Payment";
 import PaymentHistory from "../components/pages/Dashboard/PaymentHistory/PaymentHistory";
+import ContactUs from "../components/pages/Contact/ContactUs";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -40,11 +42,19 @@ const router = createBrowserRouter([
         path: "/login",
         element: <Login></Login>,
       },
+      {
+        path: "/contact",
+        element: <ContactUs></ContactUs>,
+      },
     ],
   },
   {
     path: "dashboard",
-    element: <Dashboard></Dashboard>,
+    element: (
+      <PrivateRoute>
+        <Dashboard></Dashboard>
+      </PrivateRoute>
+    ),
     children: [
       {
         path: "myCart",

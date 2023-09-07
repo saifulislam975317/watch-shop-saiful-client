@@ -4,7 +4,7 @@ import { BsFillTrashFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 const MyCart = () => {
   const [carts, refetch] = useCarts();
-  const totalPrice = carts.reduce((sum, item) => sum + item.price, 0);
+  const totalPrice = carts?.reduce((sum, item) => sum + item.price, 0);
   const total = Math.round(totalPrice);
 
   const handleDelete = (item) => {

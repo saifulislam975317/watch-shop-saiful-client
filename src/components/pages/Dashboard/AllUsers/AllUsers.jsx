@@ -6,7 +6,11 @@ const AllUsers = () => {
   const { data: users = [], refetch } = useQuery({
     queryKey: ["users"],
     queryFn: async () => {
-      const res = await fetch("http://localhost:5000/users");
+      const res = await fetch("http://localhost:5000/users", {
+        headers: {
+          authorization: `bearer ${localStorage.getItem("access-token")}`,
+        },
+      });
       const data = await res.json();
       return data;
     },
@@ -56,7 +60,7 @@ const AllUsers = () => {
   };
   return (
     <div>
-      <h1 className="text-center uppercase my-4">
+      <h1 className="text-center uppercase my-4 font-bold">
         Total Users: {users.length}
       </h1>
       <div className="overflow-x-auto">
@@ -72,7 +76,7 @@ const AllUsers = () => {
           </thead>
           <tbody>
             {users.map((user, i) => (
-              <tr className="hover" key={user._id}>
+              <tr key={user._id}>
                 <th>{i + 1}</th>
                 <td>{user.name}</td>
                 <td>{user.email}</td>

@@ -8,7 +8,12 @@ const useAdmin = () => {
     queryKey: ["isAdmin"],
     queryFn: async () => {
       const res = await fetch(
-        `http://localhost:5000/users/admin/${user?.email}`
+        `http://localhost:5000/users/admin/${user?.email}`,
+        {
+          headers: {
+            authorization: `bearer ${localStorage.getItem("access-token")}`,
+          },
+        }
       );
       const data = await res.json();
       return data.admin;
