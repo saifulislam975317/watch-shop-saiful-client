@@ -7,6 +7,7 @@ import Dashboard from "../Layout/Dashboard";
 import MyCart from "../components/pages/Dashboard/MyCart/MyCart";
 import AllUsers from "../components/pages/Dashboard/AllUsers/AllUsers";
 import ManageItems from "../components/pages/Dashboard/ManageItems/ManageItems";
+import AddWatch from "../components/pages/Dashboard/AddWatch/AddWatch";
 
 const router = createBrowserRouter([
   {
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
       {
         path: "manageItems",
         element: <ManageItems></ManageItems>,
+      },
+      {
+        path: "addWatch",
+        element: <AddWatch></AddWatch>,
       },
     ],
   },

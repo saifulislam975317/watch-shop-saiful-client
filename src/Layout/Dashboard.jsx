@@ -40,8 +40,8 @@ const Dashboard = () => {
               </li>
 
               <li>
-                <NavLink to="/dashboard/addItem">
-                  <FaUserPlus></FaUserPlus>Add Mobile
+                <NavLink to="/dashboard/addWatch">
+                  <FaUserPlus></FaUserPlus>Add Watch
                 </NavLink>
               </li>
 
