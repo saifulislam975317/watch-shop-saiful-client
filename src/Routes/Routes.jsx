@@ -6,6 +6,7 @@ import Login from "../components/pages/Login/Login";
 import Dashboard from "../Layout/Dashboard";
 import MyCart from "../components/pages/Dashboard/MyCart/MyCart";
 import AllUsers from "../components/pages/Dashboard/AllUsers/AllUsers";
+import ManageItems from "../components/pages/Dashboard/ManageItems/ManageItems";
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
       {
         path: "allUsers",
         element: <AllUsers></AllUsers>,
+      },
+      {
+        path: "manageItems",
+        element: <ManageItems></ManageItems>,
       },
     ],
   },
