@@ -35,7 +35,6 @@ const UpdateWatch = () => {
             details,
             image: imgUrl,
           };
-          console.log(newItem);
 
           fetch(`http://localhost:5000/watchData/${watchData?._id}`, {
             method: "PUT",

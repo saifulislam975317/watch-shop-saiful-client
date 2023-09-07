@@ -2,19 +2,22 @@ import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../../ContextProvider/AuthProvider";
 import loginImg from "../../../assets/signUpLogin/login.jpg";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 const Login = () => {
   const { logIn } = useContext(AuthContext);
   const { register, handleSubmit } = useForm();
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || "/";
 
   const handleLogin = (data) => {
     logIn(data.email, data.password)
       .then((loggedInUser) => {
         const user = loggedInUser.user;
-        navigate("/");
+        navigate(from, { replace: true });
         console.log(user);
       })
       .catch((error) => {
@@ -23,12 +26,12 @@ const Login = () => {
   };
   return (
     <div className="hero  bg-base-200">
-      <div className="hero-content flex-col gap-24 p-24 lg:flex-row">
+      <div className="hero-content flex-col gap-24 p-8 my-8 lg:flex-row">
         <div className="text-center lg:text-left">
           <img src={loginImg} alt="" />
         </div>
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-          <h1 className="text-5xl font-bold text-center">Login </h1>
+          <h1 className="text-5xl font-bold mt-4 text-center">Login </h1>
           <form onSubmit={handleSubmit(handleLogin)} className="card-body">
             <div className="form-control">
               <label className="label">

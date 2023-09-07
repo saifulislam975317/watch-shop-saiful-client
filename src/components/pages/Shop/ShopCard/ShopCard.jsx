@@ -3,11 +3,14 @@ import { FaCartPlus } from "react-icons/fa";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../../../ContextProvider/AuthProvider";
 import useCarts from "../../../../hooks/useCarts";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const ShopCard = ({ item }) => {
   const { name, image, price, details } = item;
   const { user } = useContext(AuthContext);
   const [, refetch] = useCarts();
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const handleAddToCart = (item) => {
     const { _id, name, image, price, details } = item;
@@ -19,26 +22,43 @@ const ShopCard = ({ item }) => {
       details,
       productId: _id,
     };
-    fetch("http://localhost:5000/carts", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(newItem),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.insertedId) {
-          refetch();
-          Swal.fire({
-            position: "top-center",
-            icon: "success",
-            title: `${item.name} is add to cart successfully`,
-            showConfirmButton: false,
-            timer: 1500,
-          });
+    if (user && user.email) {
+      fetch("http://localhost:5000/carts", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(newItem),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.insertedId) {
+            refetch();
+            Swal.fire({
+              position: "top-center",
+              icon: "success",
+              title: `${item.name} is add to cart successfully`,
+              showConfirmButton: false,
+              timer: 1500,
+            });
+          }
+        });
+    } else {
+      Swal.fire({
+        title: "without login, you can't order",
+        text: "You have to login first",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Go to login",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire("Thank you!");
+          navigate("/login", { state: { from: location } });
         }
       });
+    }
   };
   return (
     <div>
@@ -54,12 +74,13 @@ const ShopCard = ({ item }) => {
           <h2 className="card-title">{name}</h2>
           <p>{details}</p>
           <h3 className="text-orange-500 font-bold ">Price ${price}</h3>
-          <div className="card-actions text-white">
+          <div className="card-actions ">
             <button
               onClick={() => handleAddToCart(item)}
-              className="btn btn-info"
+              className="btn btn-success "
             >
-              Add To Cart <FaCartPlus className="text-2xl"></FaCartPlus>
+              Add To Cart
+              <FaCartPlus className="text-2xl text-white"></FaCartPlus>
             </button>
           </div>
         </div>

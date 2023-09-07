@@ -41,7 +41,7 @@ const ManageItems = () => {
         Total items: {products.length}
       </h1>
       <div className="overflow-x-auto">
-        <table className="table">
+        <table className="table w-full">
           <thead>
             <tr>
               <th>Sl No.</th>

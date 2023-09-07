@@ -1,10 +1,13 @@
 import { useContext } from "react";
 import { AuthContext } from "../../../../ContextProvider/AuthProvider";
 import { FcGoogle } from "react-icons/fc";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 const SocialLogin = () => {
   const { googleLogin } = useContext(AuthContext);
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || "/";
   const handleGoogle = () => {
     googleLogin().then((result) => {
       const user = result.user;
@@ -19,7 +22,7 @@ const SocialLogin = () => {
         .then((res) => res.json())
         .then((data) => {
           if (data.insertedId || !data.insertedId) {
-            navigate("/");
+            navigate(from, { replace: true });
           }
         });
     });

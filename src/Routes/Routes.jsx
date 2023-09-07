@@ -9,6 +9,10 @@ import AllUsers from "../components/pages/Dashboard/AllUsers/AllUsers";
 import ManageItems from "../components/pages/Dashboard/ManageItems/ManageItems";
 import AddWatch from "../components/pages/Dashboard/AddWatch/AddWatch";
 import UpdateWatch from "../components/pages/Dashboard/UpdateWatch/UpdateWatch";
+import Shop from "../components/pages/Shop/Shop";
+import PageNotFound from "../PageNotFound/PageNotFound";
+import AboutUs from "../components/pages/AboutUs/AboutUs";
+import Payment from "../components/pages/Dashboard/Payment/Payment";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +22,14 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+      },
+      {
+        path: "/shop",
+        element: <Shop></Shop>,
+      },
+      {
+        path: "/about",
+        element: <AboutUs></AboutUs>,
       },
       {
         path: "/signUp",
@@ -55,7 +67,15 @@ const router = createBrowserRouter([
         loader: ({ params }) =>
           fetch(`http://localhost:5000/watchData/${params.id}`),
       },
+      {
+        path: "payment",
+        element: <Payment></Payment>,
+      },
     ],
+  },
+  {
+    path: "*",
+    element: <PageNotFound></PageNotFound>,
   },
 ]);
 

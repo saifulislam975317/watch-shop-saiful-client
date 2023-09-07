@@ -60,7 +60,7 @@ const AllUsers = () => {
         Total Users: {users.length}
       </h1>
       <div className="overflow-x-auto">
-        <table className="table ">
+        <table className="table w-full">
           <thead>
             <tr>
               <th>SL No.</th>
@@ -89,7 +89,6 @@ const AllUsers = () => {
                   )}
                 </th>
                 <th>
-                  {" "}
                   <button
                     onClick={() => handleDelete(user)}
                     className="btn btn-ghost  bg-red-600 text-white"

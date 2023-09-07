@@ -1,6 +1,7 @@
 import Swal from "sweetalert2";
 import useCarts from "../../../../hooks/useCarts";
 import { BsFillTrashFill } from "react-icons/bs";
+import { Link } from "react-router-dom";
 const MyCart = () => {
   const [carts, refetch] = useCarts();
   const totalPrice = carts.reduce((sum, item) => sum + item.price, 0);
@@ -34,7 +35,13 @@ const MyCart = () => {
       <div className="flex items-center uppercase justify-evenly">
         <h1>Total orders: {carts.length}</h1>
         <h2>Total price:${total}</h2>
-        <button className="btn btn-warning btn-sm">pay</button>
+        {carts.length > 0 ? (
+          <Link to="/dashboard/payment">
+            <button className="btn btn-warning btn-sm">pay</button>
+          </Link>
+        ) : (
+          ""
+        )}
       </div>
       <div className="overflow-x-auto ">
         <table className="table">

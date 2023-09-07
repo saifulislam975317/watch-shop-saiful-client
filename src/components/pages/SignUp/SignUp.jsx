@@ -47,12 +47,12 @@ const SignUp = () => {
   };
   return (
     <div className="hero  bg-base-200">
-      <div className="hero-content flex-col gap-24 p-24 lg:flex-row">
+      <div className="hero-content flex-col gap-24 p-4 my-4 lg:flex-row">
         <div className="text-center lg:text-left">
           <img src={signUpImg} alt="" />
         </div>
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-          <h1 className="text-5xl font-bold text-center">SignUp </h1>
+          <h1 className="text-5xl font-bold text-center mt-4">SignUp </h1>
           <form onSubmit={handleSubmit(onSubmit)} className="card-body">
             <div className="form-control">
               <label className="label">

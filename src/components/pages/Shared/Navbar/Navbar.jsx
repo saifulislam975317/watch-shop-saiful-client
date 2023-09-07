@@ -3,10 +3,12 @@ import { NavLink } from "react-router-dom";
 import { AuthContext } from "../../../../ContextProvider/AuthProvider";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import useCarts from "../../../../hooks/useCarts";
+import useAdmin from "../../../../hooks/useAdmin";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
   const [carts] = useCarts();
+  const [isAdmin] = useAdmin();
   const handleLogout = () => {
     logOut().then(() => {});
   };
@@ -14,6 +16,9 @@ const Navbar = () => {
     <>
       <li>
         <NavLink to="/">Home</NavLink>
+      </li>
+      <li>
+        <NavLink to="/shop">Shop</NavLink>
       </li>
       <li>
         <NavLink to="/about">About us</NavLink>
@@ -28,8 +33,13 @@ const Navbar = () => {
               </span>
             </NavLink>
           </li>
+
           <li>
-            <NavLink to="/dashboard/MyCart">Dashboard</NavLink>
+            <NavLink
+              to={isAdmin ? "/dashboard/manageItems" : "/dashboard/MyCart"}
+            >
+              Dashboard
+            </NavLink>
           </li>
 
           <li onClick={handleLogout}>
@@ -73,7 +83,7 @@ const Navbar = () => {
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-10 p-2 shadow bg-base-100  rounded-box w-52"
+            className="menu menu-sm dropdown-content mt-3 z-10 p-2 shadow  rounded-box w-52"
           >
             {navOption}
           </ul>

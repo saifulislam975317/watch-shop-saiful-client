@@ -1,7 +1,6 @@
 import { NavLink, Outlet } from "react-router-dom";
 import {
   AiOutlineShoppingCart,
-  AiFillHome,
   AiFillCreditCard,
   AiTwotoneHome,
   AiTwotoneShopping,
@@ -34,8 +33,8 @@ const Dashboard = () => {
           {isAdmin ? (
             <>
               <li>
-                <NavLink to="/dashboard/adminHome">
-                  <AiFillHome></AiFillHome>Admin Home
+                <NavLink to="/dashboard/manageItems">
+                  <AiOutlineMenuFold></AiOutlineMenuFold>Manage Items
                 </NavLink>
               </li>
 
@@ -44,13 +43,6 @@ const Dashboard = () => {
                   <FaUserPlus></FaUserPlus>Add Watch
                 </NavLink>
               </li>
-
-              <li>
-                <NavLink to="/dashboard/manageItems">
-                  <AiOutlineMenuFold></AiOutlineMenuFold>Manage Items
-                </NavLink>
-              </li>
-
               <li>
                 <NavLink to="/dashboard/allUsers">
                   <FaUsers></FaUsers>All Users
@@ -60,22 +52,16 @@ const Dashboard = () => {
           ) : (
             <>
               <li>
-                <NavLink to="/dashboard/userHome">
-                  <AiFillHome></AiFillHome>User Home
-                </NavLink>
-              </li>
-
-              <li>
-                <NavLink to="/dashboard/paymentHistory">
-                  <AiFillCreditCard></AiFillCreditCard>Payment History
-                </NavLink>
-              </li>
-              <li>
                 <NavLink to="/dashboard/myCart">
                   <AiOutlineShoppingCart></AiOutlineShoppingCart>My Cart
                   <span className="badge badge-secondary">
                     +{carts.length || 0}
                   </span>
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard/paymentHistory">
+                  <AiFillCreditCard></AiFillCreditCard>Payment History
                 </NavLink>
               </li>
             </>
@@ -88,7 +74,7 @@ const Dashboard = () => {
           </li>
 
           <li>
-            <NavLink to="/order">
+            <NavLink to="/shop">
               <AiTwotoneShopping></AiTwotoneShopping>Shop
             </NavLink>
           </li>
