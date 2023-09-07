@@ -7,13 +7,11 @@ import blog1 from "../../../assets/blog/blog1.jpg";
 import blog2 from "../../../assets/blog/blog2.jpg";
 import blog3 from "../../../assets/blog/blog3.jpg";
 import blog4 from "../../../assets/blog/blog4.jpg";
+import SectionTitle from "../Shared/SectionTitle/SectionTitle";
 const Blog = () => {
   return (
     <div className="text-center mt-5">
-      <h1 className="text-3xl font-bold text-green-500 uppercase">
-        Our Latest Blog
-      </h1>
-      <h2 className="text-lg mt-2 mb-5">Over 868000 watches and Accessories</h2>
+      <SectionTitle heading={"Our Latest Blog"}></SectionTitle>
       <Swiper
         slidesPerView={3}
         spaceBetween={30}

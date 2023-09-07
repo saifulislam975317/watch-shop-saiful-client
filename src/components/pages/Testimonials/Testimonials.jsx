@@ -7,6 +7,8 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 import { useEffect, useState } from "react";
+import SectionTitle from "../Shared/SectionTitle/SectionTitle";
+import { Helmet } from "react-helmet-async";
 const Testimonials = () => {
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
@@ -16,10 +18,13 @@ const Testimonials = () => {
   }, []);
   return (
     <div className="text-center mt-8">
-      <h1 className="text-3xl font-bold text-slate-500">Testimonials</h1>
-      <h2 className="text-2xl font-bold text-orange-400 ">
-        see what our clients feedback about our products
-      </h2>
+      <Helmet>
+        <title>watch shop | Testimonial</title>
+      </Helmet>
+      <SectionTitle
+        heading={"Testimonials"}
+        subHeading={"see what our clients feedback about our products"}
+      ></SectionTitle>
       <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
         {reviews?.map((review) => (
           <SwiperSlide key={review._id}>

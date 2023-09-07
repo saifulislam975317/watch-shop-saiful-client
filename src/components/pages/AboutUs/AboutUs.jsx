@@ -1,10 +1,9 @@
 import aboutImg from "../../../assets/about/about.jpg";
+import SectionTitle from "../Shared/SectionTitle/SectionTitle";
 const AboutUs = () => {
   return (
     <div className="my-10">
-      <h1 className="text-3xl font-bold text-center mb-10 text-orange-500">
-        Know About us
-      </h1>
+      <SectionTitle heading={"Know about  us"}></SectionTitle>
       <div className="hero  ">
         <div className="hero-content flex-col lg:flex-row">
           <img src={aboutImg} className=" rounded-lg shadow-2xl" />

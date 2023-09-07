@@ -1,12 +1,14 @@
 import { FaShippingFast } from "react-icons/fa";
 import { GiReturnArrow } from "react-icons/gi";
 import { BiHelpCircle } from "react-icons/bi";
+import SectionTitle from "../Shared/SectionTitle/SectionTitle";
 const Conditions = () => {
   return (
     <div className="mt-8">
-      <h1 className="font-bold text-3xl text-center mb-8">
-        Products Shipping & Return Criteria
-      </h1>
+      <SectionTitle
+        heading={"Products conditions"}
+        subHeading={"Products Shipping & Return Criteria"}
+      ></SectionTitle>
       <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-2 justify-center items-center">
         <div className="card w-96  border-4">
           <div className="card-body items-center text-center">

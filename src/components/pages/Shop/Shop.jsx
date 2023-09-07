@@ -3,6 +3,8 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import useProducts from "../../../hooks/useProducts";
 import ShopTab from "./ShopTab/ShopTab";
+import SectionTitle from "../Shared/SectionTitle/SectionTitle";
+import { Helmet } from "react-helmet-async";
 
 const Shop = () => {
   const [tabIndex, setTabIndex] = useState(0);
@@ -14,9 +16,10 @@ const Shop = () => {
   const sports = products.filter((product) => product.category === "sports");
   return (
     <div className="mt-8">
-      <h1 className="text-center text-3xl font-bold mb-8">
-        Order Watches by Categories
-      </h1>
+      <Helmet>
+        <title>watch shop | shop</title>
+      </Helmet>
+      <SectionTitle heading={"Order your favourite watch"}></SectionTitle>
       <Tabs
         className="text-center"
         selectedIndex={tabIndex}
