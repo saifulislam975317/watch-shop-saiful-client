@@ -8,6 +8,7 @@ import MyCart from "../components/pages/Dashboard/MyCart/MyCart";
 import AllUsers from "../components/pages/Dashboard/AllUsers/AllUsers";
 import ManageItems from "../components/pages/Dashboard/ManageItems/ManageItems";
 import AddWatch from "../components/pages/Dashboard/AddWatch/AddWatch";
+import UpdateWatch from "../components/pages/Dashboard/UpdateWatch/UpdateWatch";
 
 const router = createBrowserRouter([
   {
@@ -47,6 +48,12 @@ const router = createBrowserRouter([
       {
         path: "addWatch",
         element: <AddWatch></AddWatch>,
+      },
+      {
+        path: "manageItems/:id",
+        element: <UpdateWatch></UpdateWatch>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/watchData/${params.id}`),
       },
     ],
   },
