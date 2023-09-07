@@ -13,6 +13,7 @@ import Shop from "../components/pages/Shop/Shop";
 import PageNotFound from "../PageNotFound/PageNotFound";
 import AboutUs from "../components/pages/AboutUs/AboutUs";
 import Payment from "../components/pages/Dashboard/Payment/Payment";
+import PaymentHistory from "../components/pages/Dashboard/PaymentHistory/PaymentHistory";
 
 const router = createBrowserRouter([
   {
@@ -70,6 +71,10 @@ const router = createBrowserRouter([
       {
         path: "payment",
         element: <Payment></Payment>,
+      },
+      {
+        path: "paymentHistory",
+        element: <PaymentHistory></PaymentHistory>,
       },
     ],
   },
