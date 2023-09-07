@@ -11,13 +11,15 @@ import {
 import { FaUsers, FaUserPlus } from "react-icons/fa";
 import { FiMenu } from "react-icons/fi";
 import useCarts from "../hooks/useCarts";
+import useAdmin from "../hooks/useAdmin";
 const Dashboard = () => {
   const [carts] = useCarts();
-  const isAdmin = true;
+  const [isAdmin] = useAdmin();
+
   return (
     <div className="drawer lg:drawer-open">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-      <div className="drawer-content flex flex-col items-center justify-center">
+      <div className="drawer-content mt-4">
         <label
           htmlFor="my-drawer-2"
           className="btn btn-neutral p-4 drawer-button lg:hidden"

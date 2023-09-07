@@ -3,6 +3,8 @@ import useCarts from "../../../../hooks/useCarts";
 import { BsFillTrashFill } from "react-icons/bs";
 const MyCart = () => {
   const [carts, refetch] = useCarts();
+  const totalPrice = carts.reduce((sum, item) => sum + item.price, 0);
+  const total = Math.round(totalPrice);
 
   const handleDelete = (item) => {
     Swal.fire({
@@ -28,49 +30,56 @@ const MyCart = () => {
     });
   };
   return (
-    <div className="overflow-x-auto">
-      <table className="table">
-        <thead>
-          <tr>
-            <th>SL No.</th>
-            <th>Image</th>
-            <th>Name</th>
-            <th>Details</th>
-            <th>Price</th>
-            <th>Delete</th>
-          </tr>
-        </thead>
-        <tbody>
-          {carts?.map((item, i) => (
-            <tr key={item._id}>
-              <td>{i + 1}</td>
-              <td>
-                <div className="flex items-center space-x-3">
-                  <div className="avatar">
-                    <div className="mask mask-squircle w-12 h-12">
-                      <img
-                        src={item.image}
-                        alt="Avatar Tailwind CSS Component"
-                      />
+    <div className="w-full px-4">
+      <div className="flex items-center uppercase justify-evenly">
+        <h1>Total orders: {carts.length}</h1>
+        <h2>Total price:${total}</h2>
+        <button className="btn btn-warning btn-sm">pay</button>
+      </div>
+      <div className="overflow-x-auto ">
+        <table className="table">
+          <thead>
+            <tr>
+              <th>SL No.</th>
+              <th>Image</th>
+              <th>Name</th>
+              <th>Details</th>
+              <th>Price</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            {carts?.map((item, i) => (
+              <tr key={item._id}>
+                <td>{i + 1}</td>
+                <td>
+                  <div className="flex items-center space-x-3">
+                    <div className="avatar">
+                      <div className="mask mask-squircle w-12 h-12">
+                        <img
+                          src={item.image}
+                          alt="Avatar Tailwind CSS Component"
+                        />
+                      </div>
                     </div>
                   </div>
-                </div>
-              </td>
-              <td>{item.name}</td>
-              <td>{item.details}</td>
-              <td>${item.price}</td>
-              <th>
-                <button
-                  onClick={() => handleDelete(item)}
-                  className="btn btn-ghost  bg-red-600 text-white"
-                >
-                  <BsFillTrashFill className="text-3xl "></BsFillTrashFill>
-                </button>
-              </th>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+                </td>
+                <td>{item.name}</td>
+                <td>{item.details}</td>
+                <td>${item.price}</td>
+                <th>
+                  <button
+                    onClick={() => handleDelete(item)}
+                    className="btn btn-ghost  bg-red-600 text-white"
+                  >
+                    <BsFillTrashFill className="text-3xl "></BsFillTrashFill>
+                  </button>
+                </th>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };
