@@ -36,13 +36,16 @@ const UpdateWatch = () => {
             image: imgUrl,
           };
 
-          fetch(`http://localhost:5000/watchData/${watchData?._id}`, {
-            method: "PUT",
-            headers: {
-              "content-type": "application/json",
-            },
-            body: JSON.stringify(newItem),
-          })
+          fetch(
+            `https://watch-shop-saiful-server.vercel.app/watchData/${watchData?._id}`,
+            {
+              method: "PUT",
+              headers: {
+                "content-type": "application/json",
+              },
+              body: JSON.stringify(newItem),
+            }
+          )
             .then((res) => res.json())
             .then((data) => {
               if (data.modifiedCount > 0) {

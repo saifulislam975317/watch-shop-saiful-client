@@ -5,7 +5,8 @@ import loginImg from "../../../assets/signUpLogin/login.jpg";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 const Login = () => {
-  const { logIn } = useContext(AuthContext);
+  const [email, setEmail] = useState("");
+  const { logIn, forgotPassword } = useContext(AuthContext);
   const { register, handleSubmit } = useForm();
   const [error, setError] = useState("");
   const navigate = useNavigate();
@@ -24,6 +25,20 @@ const Login = () => {
         setError(error.message);
       });
   };
+  const handleForgotPassword = () => {
+    if (!email) {
+      alert("please input your email in email field.");
+    }
+    forgotPassword(email)
+      .then(() => {
+        alert(
+          "password reset email has been sent your email. please check your email"
+        );
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
   return (
     <div className="hero  bg-base-200">
       <div className="hero-content flex-col gap-24 p-8 my-8 lg:flex-row">
@@ -38,6 +53,7 @@ const Login = () => {
                 <span className="label-text">Your Email</span>
               </label>
               <input
+                onBlur={(e) => setEmail(e.target.value)}
                 {...register("email")}
                 type="email"
                 placeholder="Enter your email"
@@ -56,6 +72,12 @@ const Login = () => {
                 className="input input-bordered"
                 required
               />
+              <button
+                onClick={handleForgotPassword}
+                className=" text-orange-600 link w-2/5"
+              >
+                Forgot password?
+              </button>
               {error && (
                 <span className="text-red-500">Invalid email or password</span>
               )}

@@ -4,6 +4,7 @@ import {
   createUserWithEmailAndPassword,
   getAuth,
   onAuthStateChanged,
+  sendPasswordResetEmail,
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
@@ -40,6 +41,11 @@ const AuthProvider = ({ children }) => {
     return signInWithPopup(auth, provider);
   };
 
+  const forgotPassword = (email) => {
+    setLoading(true);
+    return sendPasswordResetEmail(auth, email);
+  };
+
   const logOut = () => {
     setLoading(true);
     return signOut(auth);
@@ -52,6 +58,7 @@ const AuthProvider = ({ children }) => {
     logIn,
     updateUserProfile,
     googleLogin,
+    forgotPassword,
     logOut,
   };
 
@@ -60,7 +67,9 @@ const AuthProvider = ({ children }) => {
       setUser(currentUser);
       if (currentUser) {
         axios
-          .post("http://localhost:5000/jwt", { email: currentUser.email })
+          .post("https://watch-shop-saiful-server.vercel.app/jwt", {
+            email: currentUser.email,
+          })
           .then((data) => {
             localStorage.setItem("access-token", data.data.token);
             setLoading(false);

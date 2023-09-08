@@ -76,7 +76,9 @@ const router = createBrowserRouter([
         path: "manageItems/:id",
         element: <UpdateWatch></UpdateWatch>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/watchData/${params.id}`),
+          fetch(
+            `https://watch-shop-saiful-server.vercel.app/watchData/${params.id}`
+          ),
       },
       {
         path: "payment",

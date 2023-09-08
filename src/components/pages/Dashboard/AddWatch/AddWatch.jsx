@@ -1,7 +1,6 @@
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import SectionTitle from "../../Shared/SectionTitle/SectionTitle";
-import { Helmet } from "react-helmet-async";
 const imageBB_api = import.meta.env.VITE_imageBB_api;
 const AddWatch = () => {
   const {
@@ -31,7 +30,7 @@ const AddWatch = () => {
             details,
             image: imageURL,
           };
-          fetch("http://localhost:5000/watchData", {
+          fetch("https://watch-shop-saiful-server.vercel.app/watchData", {
             method: "POST",
             headers: {
               "content-type": "application/json",
@@ -56,9 +55,6 @@ const AddWatch = () => {
   };
   return (
     <div className="w-full px-12">
-      <Helmet>
-        <title>Mobile shop | Add Watch</title>
-      </Helmet>
       <SectionTitle heading={"Add a Watch"}></SectionTitle>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="form-control w-full ">

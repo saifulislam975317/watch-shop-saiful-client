@@ -8,19 +8,15 @@ import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 import { useEffect, useState } from "react";
 import SectionTitle from "../Shared/SectionTitle/SectionTitle";
-import { Helmet } from "react-helmet-async";
 const Testimonials = () => {
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/reviews")
+    fetch("https://watch-shop-saiful-server.vercel.app/reviews")
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, []);
   return (
     <div className="text-center mt-8">
-      <Helmet>
-        <title>watch shop | Testimonial</title>
-      </Helmet>
       <SectionTitle
         heading={"Testimonials"}
         subHeading={"see what our clients feedback about our products"}

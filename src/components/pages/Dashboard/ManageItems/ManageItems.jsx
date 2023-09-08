@@ -3,7 +3,6 @@ import { BiSolidEdit } from "react-icons/bi";
 import useProducts from "../../../../hooks/useProducts";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
-import { Helmet } from "react-helmet-async";
 const ManageItems = () => {
   const [products, refetch] = useProducts();
 
@@ -18,9 +17,12 @@ const ManageItems = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/watchData/${product._id}`, {
-          method: "DELETE",
-        })
+        fetch(
+          `https://watch-shop-saiful-server.vercel.app/watchData/${product._id}`,
+          {
+            method: "DELETE",
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount > 0) {
@@ -37,9 +39,6 @@ const ManageItems = () => {
   };
   return (
     <div className="w-full">
-      <Helmet>
-        <title>Mobile shop | ManageItems</title>
-      </Helmet>
       <h1 className="text-center font-bold text-2xl mb-2">Manage All Items</h1>
       <h1 className="text-center font-bold text-lg">
         Total items: {products.length}

@@ -1,12 +1,8 @@
-import { Helmet } from "react-helmet";
 import menWatch from "../../../assets/showUp/menShow.jpg";
 import SectionTitle from "../Shared/SectionTitle/SectionTitle";
 const ShowUp = () => {
   return (
     <div className="mt-8">
-      <Helmet>
-        <title>watch shop | offer</title>
-      </Helmet>
       <SectionTitle
         heading={"We offer on various Watches."}
         subHeading={"---Don't Miss---"}

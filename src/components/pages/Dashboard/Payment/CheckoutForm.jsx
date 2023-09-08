@@ -16,13 +16,16 @@ const CheckoutForm = ({ refetch, carts, price }) => {
 
   useEffect(() => {
     if (price > 0) {
-      fetch("http://localhost:5000/create-payment-intent", {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify({ price }),
-      })
+      fetch(
+        "https://watch-shop-saiful-server.vercel.app/create-payment-intent",
+        {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify({ price }),
+        }
+      )
         .then((res) => res.json())
         .then((data) => setClientSecret(data.clientSecret));
     }
@@ -78,7 +81,7 @@ const CheckoutForm = ({ refetch, carts, price }) => {
         cartItems: carts.map((cart) => cart._id),
         status: "pending",
       };
-      fetch("http://localhost:5000/payment", {
+      fetch("https://watch-shop-saiful-server.vercel.app/payment", {
         method: "POST",
         headers: {
           "content-type": "application/json",

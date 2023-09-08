@@ -4,7 +4,6 @@ import "react-tabs/style/react-tabs.css";
 import useProducts from "../../../hooks/useProducts";
 import ShopTab from "./ShopTab/ShopTab";
 import SectionTitle from "../Shared/SectionTitle/SectionTitle";
-import { Helmet } from "react-helmet-async";
 
 const Shop = () => {
   const [tabIndex, setTabIndex] = useState(0);
@@ -16,9 +15,6 @@ const Shop = () => {
   const sports = products.filter((product) => product.category === "sports");
   return (
     <div className="mt-8">
-      <Helmet>
-        <title>watch shop | shop</title>
-      </Helmet>
       <SectionTitle heading={"Order your favourite watch"}></SectionTitle>
       <Tabs
         className="text-center"

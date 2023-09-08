@@ -8,7 +8,9 @@ const useProducts = () => {
   } = useQuery({
     queryKey: ["products"],
     queryFn: async () => {
-      const res = await fetch("http://localhost:5000/watchData");
+      const res = await fetch(
+        "https://watch-shop-saiful-server.vercel.app/watchData"
+      );
       const data = await res.json();
       return data;
     },
