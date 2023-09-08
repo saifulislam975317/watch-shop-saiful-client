@@ -77,7 +77,7 @@ const ShopCard = ({ item }) => {
           <div className="card-actions ">
             <button
               onClick={() => handleAddToCart(item)}
-              className="btn btn-success "
+              className="btn btn-info "
             >
               <FaCartPlus className="text-2xl "></FaCartPlus>
               Add To Cart

@@ -9,6 +9,7 @@ const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
   const [carts] = useCarts();
   const [isAdmin] = useAdmin();
+
   const handleLogout = () => {
     logOut().then(() => {});
   };
@@ -23,6 +24,9 @@ const Navbar = () => {
       <li>
         <NavLink to="/about">About us</NavLink>
       </li>
+      <li>
+        <NavLink to="/contact">Contact Us</NavLink>
+      </li>
       {user ? (
         <>
           <li>
@@ -34,13 +38,15 @@ const Navbar = () => {
             </NavLink>
           </li>
 
-          <li>
-            <NavLink
-              to={isAdmin ? "/dashboard/manageItems" : "/dashboard/MyCart"}
-            >
-              Dashboard
-            </NavLink>
-          </li>
+          {isAdmin ? (
+            <li>
+              <NavLink to="/dashboard/manageItems"> Dashboard</NavLink>
+            </li>
+          ) : (
+            <li>
+              <NavLink to="/dashboard/myCart"> Dashboard</NavLink>
+            </li>
+          )}
 
           <li onClick={handleLogout}>
             <NavLink to="/login">Logout</NavLink>

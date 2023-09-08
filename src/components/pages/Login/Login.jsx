@@ -6,6 +6,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 const Login = () => {
   const [email, setEmail] = useState("");
+
   const { logIn, forgotPassword } = useContext(AuthContext);
   const { register, handleSubmit } = useForm();
   const [error, setError] = useState("");
@@ -25,9 +26,11 @@ const Login = () => {
         setError(error.message);
       });
   };
+
   const handleForgotPassword = () => {
+    console.log("email", email);
     if (!email) {
-      alert("please input your email in email field.");
+      return alert("please input your email in input field.");
     }
     forgotPassword(email)
       .then(() => {
@@ -35,9 +38,7 @@ const Login = () => {
           "password reset email has been sent your email. please check your email"
         );
       })
-      .catch((error) => {
-        console.log(error.message);
-      });
+      .catch((error) => console.error(error));
   };
   return (
     <div className="hero  bg-base-200">
@@ -47,15 +48,18 @@ const Login = () => {
         </div>
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
           <h1 className="text-5xl font-bold mt-4 text-center">Login </h1>
-          <form onSubmit={handleSubmit(handleLogin)} className="card-body">
+          <form
+            onSubmit={handleSubmit(handleLogin)}
+            className="card-body mb-0 pb-0"
+          >
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Your Email</span>
               </label>
               <input
-                onBlur={(e) => setEmail(e.target.value)}
-                {...register("email")}
                 type="email"
+                {...register("email", { required: true })}
+                onBlur={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
                 className="input input-bordered"
                 required
@@ -72,21 +76,22 @@ const Login = () => {
                 className="input input-bordered"
                 required
               />
-              <button
-                onClick={handleForgotPassword}
-                className=" text-orange-600 link w-2/5"
-              >
-                Forgot password?
-              </button>
+
               {error && (
                 <span className="text-red-500">Invalid email or password</span>
               )}
             </div>
-            <div className="form-control mt-6">
+            <div className="form-control mt-2">
               <input className="btn btn-info" type="submit" value="login" />
             </div>
           </form>
-          <p className="text-center">
+          <button
+            onClick={handleForgotPassword}
+            className=" text-orange-600 ml-4 link w-2/5"
+          >
+            Forgot password?
+          </button>
+          <p className="text-center mt-2">
             Don't have an account?
             <Link className="text-green-500 ml-2" to="/signUp">
               Sign up
