@@ -11,7 +11,6 @@ import AddWatch from "../components/pages/Dashboard/AddWatch/AddWatch";
 import UpdateWatch from "../components/pages/Dashboard/UpdateWatch/UpdateWatch";
 import Shop from "../components/pages/Shop/Shop";
 import PageNotFound from "../PageNotFound/PageNotFound";
-import AboutUs from "../components/pages/AboutUs/AboutUs";
 import Payment from "../components/pages/Dashboard/Payment/Payment";
 import PaymentHistory from "../components/pages/Dashboard/PaymentHistory/PaymentHistory";
 import ContactUs from "../components/pages/Contact/ContactUs";
@@ -31,8 +30,8 @@ const router = createBrowserRouter([
         element: <Shop></Shop>,
       },
       {
-        path: "/about",
-        element: <AboutUs></AboutUs>,
+        path: "/contact",
+        element: <ContactUs></ContactUs>,
       },
       {
         path: "/signUp",
@@ -41,10 +40,6 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login></Login>,
-      },
-      {
-        path: "/contact",
-        element: <ContactUs></ContactUs>,
       },
     ],
   },

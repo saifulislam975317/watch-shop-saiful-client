@@ -3,9 +3,10 @@ import { useContext } from "react";
 import { AuthContext } from "../ContextProvider/AuthProvider";
 
 const useCarts = () => {
-  const { user } = useContext(AuthContext);
+  const { user, loading } = useContext(AuthContext);
   const { data: carts = [], refetch } = useQuery({
     queryKey: ["carts", user?.email],
+    enabled: !loading,
     queryFn: async () => {
       const res = await fetch(
         `https://watch-shop-saiful-server.vercel.app/carts/${user?.email}`,
