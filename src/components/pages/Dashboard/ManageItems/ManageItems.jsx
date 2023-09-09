@@ -4,7 +4,7 @@ import useProducts from "../../../../hooks/useProducts";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 const ManageItems = () => {
-  const [products, refetch] = useProducts();
+  const [products, refetch, isLoading] = useProducts();
 
   const handleDelete = (product) => {
     Swal.fire({
@@ -37,6 +37,11 @@ const ManageItems = () => {
       }
     });
   };
+  if (isLoading) {
+    return (
+      <span className="  justify-center mt-48 mx-auto block items-center loading loading-spinner text-warning loading-lg"></span>
+    );
+  }
   return (
     <div className="w-full">
       <h1 className="text-center font-bold text-2xl mb-2">Manage All Items</h1>

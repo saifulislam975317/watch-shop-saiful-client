@@ -3,7 +3,11 @@ import { FaUsers } from "react-icons/fa";
 import { BsFillTrashFill } from "react-icons/bs";
 import Swal from "sweetalert2";
 const AllUsers = () => {
-  const { data: users = [], refetch } = useQuery({
+  const {
+    data: users = [],
+    refetch,
+    isLoading,
+  } = useQuery({
     queryKey: ["users"],
     queryFn: async () => {
       const res = await fetch(
@@ -18,6 +22,12 @@ const AllUsers = () => {
       return data;
     },
   });
+
+  if (isLoading) {
+    return (
+      <span className="  justify-center mt-48 mx-auto block items-center loading loading-spinner text-warning loading-lg"></span>
+    );
+  }
 
   const handleMakeAdmin = (user) => {
     fetch(
