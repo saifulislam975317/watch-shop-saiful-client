@@ -25,7 +25,7 @@ const AllUsers = () => {
 
   if (isLoading) {
     return (
-      <span className="  justify-center mt-48 mx-auto block items-center loading loading-spinner text-warning loading-lg"></span>
+      <span className="justify-center mt-48 mx-auto block items-center loading loading-spinner text-warning loading-lg"></span>
     );
   }
 

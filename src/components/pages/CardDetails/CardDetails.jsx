@@ -15,7 +15,7 @@ const CardDetails = () => {
           <p>20% Discount</p>
         </div>
       </div>
-      <div className="card   image-full">
+      <div className="card image-full">
         <figure>
           <img src={womenW} alt="watch" />
         </figure>

@@ -1,4 +1,5 @@
 import AboutUs from "../../AboutUs/AboutUs";
+import BestSellers from "../../BestSellers/BestSellers";
 import Blog from "../../Blog/Blog";
 import CardDetails from "../../CardDetails/CardDetails";
 import Conditions from "../../Conditions/Conditions";
@@ -15,6 +16,7 @@ const Home = () => {
       <CardDetails></CardDetails>
       <Shop></Shop>
       <ShowUp></ShowUp>
+      <BestSellers></BestSellers>
       <Conditions></Conditions>
       <Testimonials></Testimonials>
       <Blog></Blog>
