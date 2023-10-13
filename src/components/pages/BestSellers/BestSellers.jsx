@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import useProducts from "../../../hooks/useProducts";
+import { Link } from "react-router-dom";
 
 const BestSellers = () => {
   const [products] = useProducts();
@@ -8,15 +9,15 @@ const BestSellers = () => {
 
   useEffect(() => {
     if (showAll) {
-      setDisplayData(products.slice(0, 6));
+      setDisplayData(products.slice(3, 9));
     } else {
-      setDisplayData(products.slice(0, 3));
+      setDisplayData(products.slice(3, 6));
     }
   }, [products, showAll]);
 
   return (
     <div>
-      <h1 className="text-bold text-2xl">Our Best Sellers</h1>
+      <h1 className="font-bold text-3xl my-12 text-center">Our Best Sellers</h1>
       <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-4">
         {displayData.map((product) => (
           <div key={product._id} className="card w-96 bg-base-100 shadow-xl">
@@ -29,7 +30,16 @@ const BestSellers = () => {
             </figure>
             <div className="card-body items-center text-center">
               <h2 className="card-title">{product.name}</h2>
-              <p>{product.price}</p>
+              <p className=" text-xl text-orange-600">
+                Price: ${product.price}
+              </p>
+              <div className="card-actions">
+                <Link to={`/details/${product._id}`}>
+                  <button className="text-slate-600 px-2 rounded-md text-xl hover:text-green-400 border-2">
+                    View Details
+                  </button>
+                </Link>
+              </div>
             </div>
           </div>
         ))}

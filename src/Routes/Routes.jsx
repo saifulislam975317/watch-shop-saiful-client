@@ -15,6 +15,7 @@ import Payment from "../components/pages/Dashboard/Payment/Payment";
 import PaymentHistory from "../components/pages/Dashboard/PaymentHistory/PaymentHistory";
 import ContactUs from "../components/pages/Contact/ContactUs";
 import PrivateRoute from "./PrivateRoute";
+import ProductDetails from "../components/pages/ProductDetails/ProductDetails";
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,14 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login></Login>,
+      },
+      {
+        path: "/details/:id",
+        element: <ProductDetails></ProductDetails>,
+        loader: ({ params }) =>
+          fetch(
+            `https://watch-shop-saiful-server.vercel.app/watchData/${params.id}`
+          ),
       },
     ],
   },
